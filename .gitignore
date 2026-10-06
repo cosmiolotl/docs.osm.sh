@@ -1,0 +1,25 @@
+node_modules
+dist
+.output
+.wrangler
+.tanstack
+.impeccable/config.local.json
+.impeccable/review
+*.local
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+.env
+.env.*
+
+# Design-tool session scratch: decision rounds and their logs
+.impeccable/questions/
+.impeccable/mocks/
+
+# Local logs and caches
+*.log
+__pycache__/
+
+# OS clutter
+.DS_Store
+Thumbs.db

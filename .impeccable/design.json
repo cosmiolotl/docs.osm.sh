@@ -1,0 +1,442 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-06T19:58:43.000Z",
+  "title": "Design System: docs.osm.sh",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "primary",
+        "displayName": "Navy Ink",
+        "canonical": "oklch(22.9% 0.052 267.8)",
+        "tonalRamp": [
+          "oklch(15% 0.052 267.8)",
+          "oklch(25% 0.052 267.8)",
+          "oklch(35% 0.052 267.8)",
+          "oklch(45% 0.052 267.8)",
+          "oklch(55% 0.052 267.8)",
+          "oklch(65% 0.052 267.8)",
+          "oklch(80% 0.052 267.8)",
+          "oklch(95% 0.030 267.8)"
+        ]
+      },
+      "rose": {
+        "role": "primary",
+        "displayName": "Dusty Rose",
+        "canonical": "oklch(66.7% 0.095 6.1)",
+        "tonalRamp": [
+          "oklch(15% 0.095 6.1)",
+          "oklch(25% 0.095 6.1)",
+          "oklch(35% 0.095 6.1)",
+          "oklch(45% 0.095 6.1)",
+          "oklch(55% 0.095 6.1)",
+          "oklch(65% 0.095 6.1)",
+          "oklch(80% 0.095 6.1)",
+          "oklch(95% 0.030 6.1)"
+        ]
+      },
+      "rose-ink": {
+        "role": "primary",
+        "displayName": "Rose Ink",
+        "canonical": "oklch(52.1% 0.105 4.1)",
+        "tonalRamp": [
+          "oklch(15% 0.105 4.1)",
+          "oklch(25% 0.105 4.1)",
+          "oklch(35% 0.105 4.1)",
+          "oklch(45% 0.105 4.1)",
+          "oklch(55% 0.105 4.1)",
+          "oklch(65% 0.105 4.1)",
+          "oklch(80% 0.105 4.1)",
+          "oklch(95% 0.030 4.1)"
+        ]
+      },
+      "rose-wash": {
+        "role": "primary",
+        "displayName": "Rose Wash",
+        "canonical": "oklch(90.6% 0.027 360)",
+        "tonalRamp": [
+          "oklch(15% 0.027 360)",
+          "oklch(25% 0.027 360)",
+          "oklch(35% 0.027 360)",
+          "oklch(45% 0.027 360)",
+          "oklch(55% 0.027 360)",
+          "oklch(65% 0.027 360)",
+          "oklch(80% 0.027 360)",
+          "oklch(95% 0.027 360)"
+        ]
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "Paper Ground",
+        "canonical": "oklch(96.1% 0.008 91.5)",
+        "tonalRamp": [
+          "oklch(15% 0.008 91.5)",
+          "oklch(25% 0.008 91.5)",
+          "oklch(35% 0.008 91.5)",
+          "oklch(45% 0.008 91.5)",
+          "oklch(55% 0.008 91.5)",
+          "oklch(65% 0.008 91.5)",
+          "oklch(80% 0.008 91.5)",
+          "oklch(95% 0.008 91.5)"
+        ]
+      },
+      "ground-2": {
+        "role": "neutral",
+        "displayName": "Ground 2",
+        "canonical": "oklch(93.1% 0.012 91.5)",
+        "tonalRamp": [
+          "oklch(15% 0.012 91.5)",
+          "oklch(25% 0.012 91.5)",
+          "oklch(35% 0.012 91.5)",
+          "oklch(45% 0.012 91.5)",
+          "oklch(55% 0.012 91.5)",
+          "oklch(65% 0.012 91.5)",
+          "oklch(80% 0.012 91.5)",
+          "oklch(95% 0.012 91.5)"
+        ]
+      },
+      "table": {
+        "role": "neutral",
+        "displayName": "Table",
+        "canonical": "oklch(94.0% 0.011 89.7)",
+        "tonalRamp": [
+          "oklch(15% 0.011 89.7)",
+          "oklch(25% 0.011 89.7)",
+          "oklch(35% 0.011 89.7)",
+          "oklch(45% 0.011 89.7)",
+          "oklch(55% 0.011 89.7)",
+          "oklch(65% 0.011 89.7)",
+          "oklch(80% 0.011 89.7)",
+          "oklch(95% 0.011 89.7)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(82.6% 0.017 95.3)",
+        "tonalRamp": [
+          "oklch(15% 0.017 95.3)",
+          "oklch(25% 0.017 95.3)",
+          "oklch(35% 0.017 95.3)",
+          "oklch(45% 0.017 95.3)",
+          "oklch(55% 0.017 95.3)",
+          "oklch(65% 0.017 95.3)",
+          "oklch(80% 0.017 95.3)",
+          "oklch(95% 0.017 95.3)"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Ink 2",
+        "canonical": "oklch(44.2% 0.052 274.3)",
+        "tonalRamp": [
+          "oklch(15% 0.052 274.3)",
+          "oklch(25% 0.052 274.3)",
+          "oklch(35% 0.052 274.3)",
+          "oklch(45% 0.052 274.3)",
+          "oklch(55% 0.052 274.3)",
+          "oklch(65% 0.052 274.3)",
+          "oklch(80% 0.052 274.3)",
+          "oklch(95% 0.030 274.3)"
+        ]
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Ink 3",
+        "canonical": "oklch(54.1% 0.046 275.6)",
+        "tonalRamp": [
+          "oklch(15% 0.046 275.6)",
+          "oklch(25% 0.046 275.6)",
+          "oklch(35% 0.046 275.6)",
+          "oklch(45% 0.046 275.6)",
+          "oklch(55% 0.046 275.6)",
+          "oklch(65% 0.046 275.6)",
+          "oklch(80% 0.046 275.6)",
+          "oklch(95% 0.030 275.6)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "docs.osm.sh in the index title block; appears once."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "A page's title in its title block, and the not-found title."
+      },
+      "find": {
+        "displayName": "Find",
+        "purpose": "The search input, set large because search is the primary act."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "A sheet's title in the grid."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "The html base, the subtitle, title-block values from 640px."
+      },
+      "prose": {
+        "displayName": "Prose",
+        "purpose": "Markdown page bodies: 68ch paragraphs inside a 76ch column."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Nav rule, field labels, find count, summaries, sheet numbers and dates, path row, notes, footer. Tabular numerals."
+      },
+      "scale": {
+        "displayName": "Scale",
+        "purpose": "The ruler's numerals only."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The only easing: redline sweep, find focus stroke, and every colour, tint, and mark fade."
+      },
+      {
+        "name": "redline-sweep",
+        "value": "background-size 0% -> 100%, 180ms",
+        "purpose": "The rose wash sweeping in under a search match; removed under prefers-reduced-motion."
+      },
+      {
+        "name": "find-stroke",
+        "value": "transform scaleX(0) -> scaleX(1), 200ms",
+        "purpose": "The find row's 2px rose-ink focus stroke drawing left to right along its bottom rule; removed under prefers-reduced-motion."
+      },
+      {
+        "name": "fade",
+        "value": "150ms",
+        "purpose": "The sheet in hand's tint and corner crosses fading in, link and sheet-title colour to rose-ink, and the find row's tint."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ],
+    "focus": {
+      "outline": "2px solid var(--rose-ink)",
+      "offset": "1px; -2px (inside) on sheets, which also show their rose-ink corner crosses",
+      "findRow": "2px rose-ink stroke along the bottom rule plus a 20% rose-wash tint; the input outline is suppressed"
+    },
+    "selection": {
+      "background": "var(--rose)",
+      "color": "var(--ground)"
+    },
+    "drawing": {
+      "column": "max 76rem; width calc(100% - 2rem), calc(100% - 4rem) from 640px; centred",
+      "rails": "1px rule, full height: the column's inline borders",
+      "rows": "1px rule top border across the full window width; the row under the nav rule and the 24px lead-in draw none",
+      "registrationMark": "11px cross of two 1px ink-3 strokes, centred on each rule/rail crossing",
+      "sheetMark": "11px rose-ink crosses centred on the four corners of the sheet under the pointer or focus",
+      "sharedEdges": "cells draw right and bottom only; the grid is pulled 1px under the rail and the next rule",
+      "rulerUnit": "16px, major tick every 80px (5 units)",
+      "leadIn": "24px",
+      "runOut": "40px, below the closing rule",
+      "table": "body and html are painted table; the column paints itself ground, so the table only shows in the margins",
+      "marginHatch": "1px rule lines at -45deg, 7px pitch, in a 28px band beside each rail, full page height in one piece; no knockout under crosses",
+      "constructionGrid": "1.5px ink-3 dots at 55% opacity on the 16px unit, measured from the rail; masked to rise from the lettering cell bottom-right (60% x 110% ellipse, 45% x 90% below 640px)"
+    }
+  },
+  "components": [
+    {
+      "name": "Nav Rule",
+      "kind": "nav",
+      "refersTo": "nav-rule",
+      "description": "The labelled hairline every surface opens with, drawn as the drawing's first full-width rule with registration crosses at the rails; shared with puzzles.osm.sh and a fixed part of the family system.",
+      "html": "<div class=\"ds-nav\"><div class=\"ds-nav-lead\"></div><div class=\"ds-nav-row\"><div class=\"ds-nav-col\"><nav class=\"ds-nav-rule\" aria-label=\"Site\"><a href=\"#\" class=\"ds-nav-home\" aria-current=\"page\">docs.osm.sh</a><span class=\"ds-nav-fill\" aria-hidden=\"true\"></span><a href=\"#\" class=\"ds-nav-sib\">osm.sh</a><span class=\"ds-nav-sep\" aria-hidden=\"true\">│</span><a href=\"#\" class=\"ds-nav-sib\">puzzles</a></nav></div></div><div class=\"ds-nav-lead\"></div></div>",
+      "css": ".ds-nav { font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, monospace; font-variant-ligatures: none; background: var(--ground); padding: 0; } .ds-nav-lead { width: calc(100% - 2rem); max-width: 76rem; height: 24px; margin-inline: auto; border-inline: 1px solid var(--rule); } .ds-nav-row { position: relative; border-top: 1px solid var(--rule); } .ds-nav-col { position: relative; width: calc(100% - 2rem); max-width: 76rem; height: 0; margin-inline: auto; border-inline: 1px solid var(--rule); } .ds-nav-col::before, .ds-nav-col::after { content: ''; position: absolute; z-index: 2; top: -6px; width: 11px; height: 11px; pointer-events: none; background: linear-gradient(var(--ink-3), var(--ink-3)) center / 1px 100% no-repeat, linear-gradient(var(--ink-3), var(--ink-3)) center / 100% 1px no-repeat; } .ds-nav-col::before { left: -6px; } .ds-nav-col::after { right: -6px; } .ds-nav-rule { position: absolute; left: 0; right: 0; top: 0; transform: translateY(-50%); display: flex; align-items: center; padding: 0 2ch; font-size: 0.875rem; line-height: 24px; white-space: nowrap; } .ds-nav-rule > * { background: var(--ground); } .ds-nav-rule > .ds-nav-fill { flex: 1 1 auto; min-width: 3ch; background: transparent; } .ds-nav-home { padding: 0 0.75ch; color: var(--ink); font-weight: 500; text-decoration: none; } .ds-nav-sib { padding: 0 0.75ch; color: var(--ink-3); text-decoration: none; text-underline-offset: 0.2em; transition: color 150ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-nav-sib:hover { color: var(--rose-ink); text-decoration: underline; } .ds-nav-sib:focus-visible { outline: 2px solid var(--rose-ink); outline-offset: 1px; } .ds-nav-sep { color: var(--rule); }"
+    },
+    {
+      "name": "Drawing Row",
+      "kind": "custom",
+      "refersTo": "drawing-column",
+      "description": "The unit every surface is built from: a full-width rule, a paper column between two full-height rails lying on the hatched table, and an ink-3 registration cross wherever the rule crosses a rail.",
+      "html": "<div class=\"ds-draw\"><section class=\"ds-row\"><div class=\"ds-col\"><p class=\"ds-cell\"># no summary</p></div></section><section class=\"ds-row\"><div class=\"ds-col\"><p class=\"ds-cell\"># nothing published yet</p></div></section><div class=\"ds-row\" aria-hidden=\"true\"><div class=\"ds-col ds-runout\"></div></div></div>",
+      "css": ".ds-draw { --col: min(100% - 2rem, 76rem); --hatch: 28px; font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, monospace; font-variant-ligatures: none; background: repeating-linear-gradient(-45deg, var(--rule) 0 1px, transparent 1px 7px) center top / calc(var(--col) + 2 * var(--hatch)) 100% no-repeat, var(--table); color: var(--ink); padding-top: 24px; } .ds-row { position: relative; border-top: 1px solid var(--rule); } .ds-col { position: relative; width: calc(100% - 2rem); max-width: 76rem; margin-inline: auto; border-inline: 1px solid var(--rule); background: var(--ground); } .ds-col::before, .ds-col::after { content: ''; position: absolute; z-index: 2; top: -6px; width: 11px; height: 11px; pointer-events: none; background: linear-gradient(var(--ink-3), var(--ink-3)) center / 1px 100% no-repeat, linear-gradient(var(--ink-3), var(--ink-3)) center / 100% 1px no-repeat; } .ds-col::before { left: -6px; } .ds-col::after { right: -6px; } .ds-cell { margin: 0; padding: 16px 3ch; font-size: 0.875rem; line-height: 1.5; color: var(--ink-3); } .ds-runout { height: 40px; }"
+    },
+    {
+      "name": "Title Block",
+      "kind": "custom",
+      "refersTo": "title-block",
+      "description": "The index banner: the Display name, over a faded 16px construction grid, beside a 30ch column of stacked fields, set in rule hairlines so one divider meets the nav rule.",
+      "html": "<section class=\"ds-tb\"><div class=\"ds-tb-name\"><h1>docs.osm.sh</h1><p>osmii's knowledgebase</p></div><dl class=\"ds-tb-fields\"><div><dt>drawn</dt><dd>osmii</dd></div><div><dt>sheets</dt><dd>0</dd></div><div><dt>last rev</dt><dd class=\"ds-tb-muted\"># none</dd></div></dl></section>",
+      "css": ".ds-tb { font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, monospace; font-variant-ligatures: none; display: grid; grid-template-columns: 1fr 30ch; background: var(--ground); color: var(--ink); border: 1px solid var(--rule); border-top: 0; } .ds-tb-name { position: relative; isolation: isolate; padding: 48px 3ch 40px; } .ds-tb-name::before { content: ''; position: absolute; z-index: -1; inset: 0; pointer-events: none; background: radial-gradient(circle, var(--ink-3) 0.75px, transparent 1.25px) -8px -8px / 16px 16px; opacity: 0.55; mask-image: radial-gradient(ellipse 60% 110% at 100% 100%, #000 10%, transparent 100%); } .ds-tb-name h1 { margin: 0; font-size: clamp(2.25rem, 5vw, 3.5rem); font-weight: 500; line-height: 1.05; letter-spacing: -0.03em; } .ds-tb-name p { margin: 12px 0 0; color: var(--ink-2); } .ds-tb-fields { margin: 0; display: grid; grid-auto-rows: 1fr; border-left: 1px solid var(--rule); } .ds-tb-fields > div { display: flex; align-items: center; justify-content: space-between; gap: 4px; padding: 0 3ch; } .ds-tb-fields > div + div { border-top: 1px solid var(--rule); } .ds-tb-fields dt { font-size: 0.875rem; color: var(--ink-3); } .ds-tb-fields dd { margin: 0; white-space: nowrap; font-variant-numeric: tabular-nums; } .ds-tb-muted { color: var(--ink-3); }"
+    },
+    {
+      "name": "Find Row",
+      "kind": "input",
+      "refersTo": "find-input",
+      "description": "The primary interaction: a row holding a large borderless input, the live count and the / key; focus tints the row and draws a rose-ink stroke along its bottom rule.",
+      "html": "<div class=\"ds-find\"><label for=\"ds-find-q\">find</label><input id=\"ds-find-q\" type=\"search\" placeholder=\"search sheets\" autocomplete=\"off\" spellcheck=\"false\"><span class=\"ds-find-count\">0 sheets</span><kbd class=\"ds-find-key\">/</kbd><span class=\"ds-find-stroke\" aria-hidden=\"true\"></span></div>",
+      "css": ".ds-find { font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, monospace; font-variant-ligatures: none; position: relative; display: flex; align-items: center; gap: 2ch; min-height: 7.5rem; padding: 0 3ch; background: var(--ground); border-block: 1px solid var(--rule); transition: background-color 150ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-find:focus-within { background: color-mix(in srgb, var(--rose-wash) 20%, var(--ground)); } .ds-find label, .ds-find-count { flex-shrink: 0; font-size: 0.875rem; color: var(--ink-2); white-space: nowrap; font-variant-numeric: tabular-nums; } .ds-find input { font: inherit; flex: 1; min-width: 0; background: transparent; border: 0; border-radius: 0; padding: 0; font-size: clamp(1.5rem, 3.25vw, 2.5rem); line-height: 1.25; letter-spacing: -0.02em; color: var(--ink); caret-color: var(--rose-ink); outline: none; appearance: none; } .ds-find input::placeholder { color: var(--ink-2); } .ds-find input::-webkit-search-cancel-button, .ds-find input::-webkit-search-decoration { appearance: none; } .ds-find-key { display: inline-flex; align-items: center; justify-content: center; width: 3ch; height: 24px; border: 1px solid var(--rule); font: inherit; font-size: 0.875rem; color: var(--ink-2); } .ds-find:focus-within .ds-find-key { display: none; } .ds-find-stroke { position: absolute; z-index: 1; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--rose-ink); transform: scaleX(0); transform-origin: left; transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-find:focus-within .ds-find-stroke { transform: scaleX(1); } @media (prefers-reduced-motion: reduce) { .ds-find-stroke { transition: none; } }"
+    },
+    {
+      "name": "Ruler",
+      "kind": "custom",
+      "refersTo": "ruler",
+      "description": "A 1.75rem row between find and the sheets: a tick every 16px, a longer one every 80px, numbered 0, 5, 10.",
+      "html": "<div class=\"ds-ruler\" aria-hidden=\"true\"><span>0</span><span>5</span><span>10</span><span>15</span><span>20</span><span>25</span></div>",
+      "css": ".ds-ruler { font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, monospace; font-variant-ligatures: none; display: flex; overflow: hidden; height: 1.75rem; background-color: var(--ground); border-block: 1px solid var(--rule); background-image: linear-gradient(to right, var(--ink-2) 1px, transparent 1px), linear-gradient(to right, var(--ink-3) 1px, transparent 1px); background-size: 80px 0.75rem, 16px 0.375rem; background-position: 0 100%; background-repeat: repeat-x; user-select: none; } .ds-ruler span { flex: 0 0 80px; padding: 2px 0 0 4px; font-size: 0.75rem; line-height: 1; color: var(--ink-3); font-variant-numeric: tabular-nums; }"
+    },
+    {
+      "name": "Sheet",
+      "kind": "card",
+      "refersTo": "sheet",
+      "description": "A page on the index, drawn as a cell of a shared-border grid; the sheet in hand gets rose-ink corner crosses and a faint ground-2 tint.",
+      "html": "<ul class=\"ds-sheets\"><li><a href=\"#\" class=\"ds-sheet\"><span class=\"ds-sheet-marks\" aria-hidden=\"true\"></span><span class=\"ds-sheet-title\">A <mark class=\"ds-sheet-rl\">knight</mark> in a minefield</span><span class=\"ds-sheet-sum\">Counting the safe tours of a knight across a board seeded with mines.</span><span class=\"ds-sheet-foot\"><span class=\"ds-sheet-no\">002</span><span class=\"ds-sheet-date\">2026-09-20</span></span></a></li><li><a href=\"#\" class=\"ds-sheet\"><span class=\"ds-sheet-marks\" aria-hidden=\"true\"></span><span class=\"ds-sheet-title\">Deploying osm.sh</span><span class=\"ds-sheet-sum ds-muted\"># no summary</span><span class=\"ds-sheet-foot\"><span class=\"ds-sheet-no\">001</span><span class=\"ds-sheet-date\"># undated</span></span></a></li></ul>",
+      "css": ".ds-sheets { font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, monospace; font-variant-ligatures: none; list-style: none; margin: 8px; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); background: var(--ground); } .ds-sheets li { display: contents; } .ds-sheet { position: relative; display: flex; flex-direction: column; min-height: 12rem; padding: 24px 3ch 20px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); color: var(--ink); text-decoration: none; transition: background-color 150ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-sheet:hover, .ds-sheet:focus-visible { background-color: color-mix(in srgb, var(--ground-2) 60%, var(--ground)); } .ds-sheet:focus-visible { outline: 2px solid var(--rose-ink); outline-offset: -2px; } .ds-sheet-marks { --mark: var(--rose-ink); position: absolute; z-index: 3; inset: -6px; pointer-events: none; opacity: 0; transition: opacity 150ms cubic-bezier(0.16, 1, 0.3, 1); background: linear-gradient(var(--mark), var(--mark)) 5px 0 / 1px 11px no-repeat, linear-gradient(var(--mark), var(--mark)) 0 5px / 11px 1px no-repeat, linear-gradient(var(--mark), var(--mark)) calc(100% - 5px) 0 / 1px 11px no-repeat, linear-gradient(var(--mark), var(--mark)) 100% 5px / 11px 1px no-repeat, linear-gradient(var(--mark), var(--mark)) 5px 100% / 1px 11px no-repeat, linear-gradient(var(--mark), var(--mark)) 0 calc(100% - 5px) / 11px 1px no-repeat, linear-gradient(var(--mark), var(--mark)) calc(100% - 5px) 100% / 1px 11px no-repeat, linear-gradient(var(--mark), var(--mark)) 100% calc(100% - 5px) / 11px 1px no-repeat; } .ds-sheet:hover .ds-sheet-marks, .ds-sheet:focus-visible .ds-sheet-marks { opacity: 1; } .ds-sheet-title { display: block; font-weight: 500; line-height: 1.375; transition: color 150ms; } .ds-sheet:hover .ds-sheet-title { color: var(--rose-ink); } .ds-sheet-sum { margin-top: 8px; font-size: 0.875rem; line-height: 1.625; color: var(--ink-2); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; } .ds-sheet-sum.ds-muted { color: var(--ink-3); } .ds-sheet-foot { margin-top: auto; padding-top: 24px; display: flex; align-items: baseline; justify-content: space-between; gap: 2ch; font-size: 0.875rem; font-variant-numeric: tabular-nums; } .ds-sheet-no { color: var(--ink); } .ds-sheet-date { color: var(--ink-2); } .ds-sheet-rl { color: inherit; background: var(--rose-wash); box-shadow: inset 0 -1px 0 var(--rose); } @media (prefers-reduced-motion: reduce) { .ds-sheet, .ds-sheet-marks { transition: none; } }"
+    },
+    {
+      "name": "Redline",
+      "kind": "custom",
+      "refersTo": "redline",
+      "description": "A search match: the rose wash sweeps in under the matched words over a 1px rose underline.",
+      "html": "<p class=\"ds-rl-text\">Notes on <mark class=\"ds-rl\">deploy</mark>ing osm.sh</p>",
+      "css": ".ds-rl-text { font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, monospace; font-variant-ligatures: none; color: var(--ink); background: var(--ground); padding: 8px 3ch; margin: 0; } .ds-rl { color: inherit; background-image: linear-gradient(var(--rose-wash), var(--rose-wash)); background-repeat: no-repeat; background-size: 100% 100%; box-shadow: inset 0 -1px 0 var(--rose); animation: ds-rl 180ms cubic-bezier(0.16, 1, 0.3, 1); } @keyframes ds-rl { from { background-size: 0% 100%; } } @media (prefers-reduced-motion: reduce) { .ds-rl { animation: none; } }"
+    },
+    {
+      "name": "Note",
+      "kind": "custom",
+      "refersTo": "note",
+      "description": "Empty states: a # comment set straight into the sheet row, with a rose-ink clear action when a search finds nothing.",
+      "html": "<p class=\"ds-note\"># no sheet matches “knight” · <button type=\"button\" class=\"ds-note-clear\">clear</button> to show all 12</p>",
+      "css": ".ds-note { font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, monospace; font-variant-ligatures: none; margin: 0; padding: 24px 3ch; background: var(--ground); font-size: 0.875rem; line-height: 1.5; color: var(--ink-3); } .ds-note-clear { font: inherit; background: none; border: 0; padding: 0; cursor: pointer; color: var(--rose-ink); text-decoration: underline; text-decoration-color: var(--rose); text-underline-offset: 0.2em; } .ds-note-clear:hover { color: var(--ink); } .ds-note-clear:focus-visible { outline: 2px solid var(--rose-ink); outline-offset: 1px; }"
+    },
+    {
+      "name": "Text Action",
+      "kind": "button",
+      "refersTo": "find-row",
+      "description": "The only button form: a text action in ink-2 that turns rose-ink and underlines on hover (clear, back to all sheets).",
+      "html": "<button type=\"button\" class=\"ds-act\">clear</button>",
+      "css": ".ds-act { font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, monospace; font-variant-ligatures: none; font-size: 0.875rem; background: none; border: 0; border-radius: 0; padding: 0; cursor: pointer; color: var(--ink-2); text-underline-offset: 0.2em; transition: color 150ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-act:hover { color: var(--rose-ink); text-decoration: underline; } .ds-act:focus-visible { outline: 2px solid var(--rose-ink); outline-offset: 1px; }"
+    },
+    {
+      "name": "Footer",
+      "kind": "custom",
+      "refersTo": "footer",
+      "description": "The index's last row, drawn only from 640px and only when there are sheets: the key hints at the right.",
+      "html": "<div class=\"ds-foot\"><span class=\"ds-foot-hints\"><span><kbd>/</kbd> find</span><span><kbd>↑ ↓ ← →</kbd> move</span><span><kbd>enter</kbd> open</span></span></div>",
+      "css": ".ds-foot { font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, monospace; font-variant-ligatures: none; display: flex; align-items: center; justify-content: flex-end; gap: 2ch; padding: 16px 3ch; background: var(--ground); font-size: 0.875rem; line-height: 1.5; color: var(--ink-3); } .ds-foot-hints { display: flex; align-items: center; gap: 2.5ch; } .ds-foot-hints > span { display: flex; align-items: center; gap: 1ch; } .ds-foot kbd { font: inherit; font-weight: 500; color: var(--ink-2); }"
+    },
+    {
+      "name": "Tag",
+      "kind": "custom",
+      "refersTo": "tag",
+      "description": "A page's tag as #name in ink-2, on its sheet and in its page's path row; rose-ink and underlined on hover, redlined as far as a #tag in find reached.",
+      "html": "<p class=\"ds-tag-line\"><button type=\"button\" class=\"ds-tag\">#kurry</button><button type=\"button\" class=\"ds-tag\">#discord</button><button type=\"button\" class=\"ds-tag\"><mark class=\"ds-tag-hit\">#pri</mark>vacy</button></p>",
+      "css": ".ds-tag-line { font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, monospace; font-variant-ligatures: none; display: flex; flex-wrap: wrap; gap: 4px 1.5ch; margin: 0; padding: 8px 3ch; background: var(--ground); font-size: 0.875rem; line-height: 1.5; } .ds-tag { font: inherit; color: var(--ink-2); background: none; border: 0; padding: 0; cursor: pointer; text-underline-offset: 0.2em; text-decoration-thickness: 1px; transition: color 150ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-tag:hover { color: var(--rose-ink); text-decoration: underline; } .ds-tag:focus-visible { outline: 2px solid var(--rose-ink); outline-offset: 1px; } .ds-tag-hit { color: inherit; background: var(--rose-wash); box-shadow: inset 0 -1px 0 var(--rose); }"
+    },
+    {
+      "name": "Tags Row",
+      "kind": "custom",
+      "refersTo": "tags-row",
+      "description": "Find's completion line, drawn as its own row under find only while a #tag is being typed: the set's tags that begin it, the first (the one tab takes) in ink at 500, each with its sheet count in ink-3.",
+      "html": "<div class=\"ds-tr\"><span class=\"ds-tr-label\">tags</span><span class=\"ds-tr-list\"><button type=\"button\" class=\"ds-tr-item ds-tr-first\"><mark class=\"ds-tr-hit\">#p</mark>rivacy<span class=\"ds-tr-n\">1</span></button><button type=\"button\" class=\"ds-tr-item\"><mark class=\"ds-tr-hit\">#p</mark>robability<span class=\"ds-tr-n\">1</span></button></span><span class=\"ds-tr-hint\"><kbd>tab</kbd> complete</span></div>",
+      "css": ".ds-tr { font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, monospace; font-variant-ligatures: none; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 2ch; padding: 12px 3ch; background: var(--ground); border-top: 1px solid var(--rule); } .ds-tr-label { font-size: 0.875rem; color: var(--ink-2); } .ds-tr-list { display: flex; flex-wrap: wrap; gap: 4px 2ch; font-size: 0.875rem; } .ds-tr-item { font: inherit; color: var(--ink-2); background: none; border: 0; padding: 0; cursor: pointer; text-underline-offset: 0.2em; transition: color 150ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-tr-first { color: var(--ink); font-weight: 500; } .ds-tr-item:hover { color: var(--rose-ink); text-decoration: underline; } .ds-tr-hit { color: inherit; background: var(--rose-wash); box-shadow: inset 0 -1px 0 var(--rose); } .ds-tr-n { margin-left: 0.75ch; font-weight: 400; color: var(--ink-3); font-variant-numeric: tabular-nums; } .ds-tr-hint { margin-left: auto; font-size: 0.875rem; color: var(--ink-3); } .ds-tr-hint kbd { font: inherit; font-weight: 500; color: var(--ink-2); }"
+    },
+    {
+      "name": "Mark",
+      "kind": "custom",
+      "refersTo": "mark",
+      "description": "The site's logo: a single rose slash at Fira Code's angle on the white squircle puzzles' favicon uses. public/favicon.svg is its only source.",
+      "html": "<div class=\"ds-mark\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\" width=\"64\" height=\"64\" role=\"img\" aria-label=\"docs.osm.sh\"><path fill=\"#fff\" d=\"M32 2C8 2 2 8 2 32s6 30 30 30 30-6 30-30S56 2 32 2Z\"/><path stroke=\"#c67b8b\" stroke-width=\"8\" d=\"M22.32 52 41.68 12\"/></svg><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\" width=\"16\" height=\"16\" aria-hidden=\"true\"><path fill=\"#fff\" d=\"M32 2C8 2 2 8 2 32s6 30 30 30 30-6 30-30S56 2 32 2Z\"/><path stroke=\"#c67b8b\" stroke-width=\"8\" d=\"M22.32 52 41.68 12\"/></svg></div>",
+      "css": ".ds-mark { display: flex; align-items: center; gap: 24px; padding: 16px 3ch; background: var(--ground); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Whiteprint Workbench",
+    "overview": "docs.osm.sh is a drafting workbench in daylight, and it belongs to the same osm.sh family as puzzles.osm.sh. Every surface is one ruled drawing on a single sheet of paper, laid on a drafting table. A column stands between two rails that run the full height of the page. Hairline rules cut it into rows and run the full width of the window, and a small registration cross sits wherever a rule crosses a rail. The labelled nav rule is the drawing's first rule. Under it, the knowledgebase's title block is the banner, the find row is the search, a ruler measures the drawing, and every page is a cell in the sheet grid below. Outside the rails the table shows through, hatched in a band beside each rail, and each title block's lettering cell carries a faint construction grid. The palette is a whiteprint: warm paper, navy text, `rule` hairlines, and rose redlines that mark what the search found and which sheet is in hand. Fira Code is the only face, corners are square, and nothing casts a shadow.\n\nSearch comes first. The caret waits in the find row on arrival (fine pointers only), `/` returns to it from anywhere, and typing narrows the sheet grid live while the matched words are redlined on every sheet that stays. The index does not sort sheets by kind. Writing, projects, and notes still exist as directories and URL segments (`/writing/…`, `/projects/…`, `/notes/…`), but on the index they are one numbered set, newest first. Sheet numbers count up from the oldest page as three-digit numbers (`001`), so the newest sheet carries the highest number. Opening a sheet draws it at full size between the same rails, with its own title block across the top, and `h` or `q` puts it back where it was.\n\nAn empty knowledgebase looks empty. With no pages the title block reads `0` sheets and `# none` for last rev, the find count reads `0 sheets`, the sheet row holds a single note, `# nothing published yet`, and there is no footer.",
+    "keyCharacteristics": [
+      "One face, Fira Code, with ligatures off on a 16px base. Chrome weights are 400 and 500, and 700 appears only as `strong` inside prose.",
+      "Paper on a table. The column is `ground` paper. The margins outside the rails are the `table`, with a 28px band of 45° `rule` section hatching beside each rail. Inside the column there is no mat, panel, or card surface.",
+      "One line colour. Every rule, rail, and cell edge is a 1px `rule` hairline. Emphasis comes from marks, never from a heavier line.",
+      "Rules run edge to edge of the window, and content stays between the rails (at most 76rem).",
+      "Registration crosses in `ink-3` sit on every point where a rule crosses a rail. The sheet in hand gets `rose-ink` crosses at its four corners.",
+      "Rose is the redline: the search-match wash, the find row's focus stroke, the marks on the sheet in hand, focus rings, hovered links, and text selection.",
+      "Zero radius. No shadows.",
+      "The labelled hairline nav rule opens every surface and is part of the family system."
+    ],
+    "rules": [
+      {
+        "name": "The Redline Rule",
+        "body": "Rose marks a finding, a live focus, or the sheet in hand, and nothing else. The wash sits under matched words, the rose-ink stroke under the focused find row, and the rose-ink crosses on the corners of the sheet under the pointer or focus. Outside a match, rose's only fill is the find row's 20% wash while it holds focus.",
+        "section": "colors"
+      },
+      {
+        "name": "The Paper and Table Rule",
+        "body": "The drawing is `ground` paper lying on the `table`. Texture comes only from the drafting world, and it is drawn as linework: 45° section hatching (1px `rule`, 7px pitch, 28px wide) in the margins beside each rail, and the construction grid in a title block's lettering cell. There is no mat, panel, or card surface inside the column. `ground-2` appears only inside prose, in the scrollbar track, and as the tint of the sheet in hand.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Line Rule",
+        "body": "Every line is a 1px `rule` hairline. No line darkens or thickens to show emphasis. Emphasis is a mark added to the drawing: an `ink-3` registration cross, a `rose-ink` corner cross, or the 2px `rose-ink` find stroke.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Face Rule",
+        "body": "Fira Code is the only family, and inputs and buttons inherit it. KaTeX's math faces are the one exception, and they appear only inside prose.",
+        "section": "typography"
+      },
+      {
+        "name": "The Weight Ceiling Rule",
+        "body": "Chrome stops at 500. Weight 700 belongs only to Markdown `strong`.",
+        "section": "typography"
+      },
+      {
+        "name": "The Annotation Prefix Rule",
+        "body": "Empty or missing values are written as `#` comments in `ink-3` (`# none`, `# undated`, `# no summary`, `# nothing published yet`, `# no sheet matches \"…\"`). A blank space or an invented value is never used instead.",
+        "section": "typography"
+      },
+      {
+        "name": "The Rails Rule",
+        "body": "Rules run the full width of the window, and content never leaves the rails. Nothing is placed in the margins outside the column except the rules' own run-out, the `table`, and the hatch band beside each rail.",
+        "section": "layout"
+      },
+      {
+        "name": "The Registration Rule",
+        "body": "A registration cross (11px, two 1px `ink-3` strokes) is centred on every point where a full-width rule crosses a rail, and nowhere else. A row with no rule of its own carries no crosses.",
+        "section": "layout"
+      },
+      {
+        "name": "The Marked-Not-Lifted Rule",
+        "body": "A surface is never lifted. The sheet under the pointer or focus is marked at its corners and tinted, and nothing about it rises, casts a shadow, or gains a heavier edge.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** set everything in Fira Code with ligatures off on a 16px base, and measure horizontal insets in `ch`.",
+      "**Do** open every surface with the labelled hairline nav rule as the drawing's first full-width rule, `──┼─ docs.osm.sh ──── osm.sh │ puzzles ─┼──`.",
+      "**Do** build every surface as one ruled drawing: a column of at most 76rem between full-height `rule` rails, rows cut by full-width `rule` hairlines, and an 11px `ink-3` registration cross wherever a rule crosses a rail.",
+      "**Do** let cells share their edges. Each cell draws only its right and bottom, so no line is ever doubled.",
+      "**Do** mark the sheet in hand with four `rose-ink` corner crosses and a 60% `ground-2` tint.",
+      "**Do** lay the drawing on the `table`, with the 28px hatch band beside each rail and a construction grid on the 16px unit in every title block's lettering cell.",
+      "**Do** keep search first: the find row sits directly under the title block, `/` reaches it from anywhere, and matches are redlined in `rose-wash` over a `rose` underline.",
+      "**Do** set every page as one numbered sheet (`001`, counting up from the oldest) in a single set, newest first.",
+      "**Do** write missing values as `#` comments in `ink-3` (`# none`, `# undated`, `# no summary`, `# nothing published yet`) and keep counts true (`0 sheets`).",
+      "**Do** keep motion to the redline sweep (180ms), the find stroke (200ms), and colour, tint, and mark fades (150ms), all on `--ease-out-expo`, and honour `prefers-reduced-motion`.",
+      "**Do** theme the browser: `rose` selection, `rose-ink` caret and focus ring, a thin `rule` scrollbar on a `ground-2` track, `color-scheme: light`, and `theme-color` set to the ground."
+    ],
+    "donts": [
+      "**Don't** distinguish article kinds on the index with tabs, badges, colour, or grouping. Kinds live only in directories and URL segments.",
+      "**Don't** put a second surface or a texture inside the column beyond the title block's construction grid. That rules out a gridded mat, cards, panels, and noise or grain anywhere. Texture is drafting linework: the margin hatch and the construction grid.",
+      "**Don't** knock the hatch out behind a mark. A paper patch under a registration cross breaks the rail it sits on.",
+      "**Don't** draw a line in any colour but `rule`, or heavier than 1px. Show emphasis with a mark, never by darkening a line.",
+      "**Don't** introduce a second typeface or a chrome weight above 500.",
+      "**Don't** round a corner. `--radius` is 0.",
+      "**Don't** add a drop shadow or blur, or use a gradient as a tonal fill. Gradients in this system only draw hard-stop lines (the registration crosses, the sheet marks, the ruler ticks, the margin hatch, the construction grid) or a flat wash (the redline).",
+      "**Don't** put rose anywhere but a redline, a focus mark, the marks on the sheet in hand, a hovered link, or the selection.",
+      "**Don't** turn the index into a dashboard or a marketing hero (stat tiles, featured heroes, tag clouds), or into an app shell with a sidebar of sections. The title block's fields are the only figures.",
+      "**Don't** ship a dark theme. This is a whiteprint in daylight.",
+      "**Don't** invent sheets, dates, summaries, or counts to fill an empty grid."
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+---
+title: Kurry Bot Privacy Policy
+summary: What data Kurry bot stores and how its handled.
+date: 2026-09-25
+tags: kurry, discord, privacy
+---
+
+# Privacy Policy
+
+Last updated: September 25, 2026
+
+This Privacy Policy explains how Kurry Bot ("Kurry Bot," "we," "us," or "our") handles information when you use the Kurry Bot Discord bot (the "Service").
+
+## Information We Process
+
+When the Service receives a Discord message, it processes the message content to create a cryptographic hash. A hash is a one-way representation of the message content.
+
+We store only the resulting message-content hash. We do not store the original message content or any other information, including Discord user IDs, usernames, server IDs, channel IDs, IP addresses, device information, account information, or usage analytics.
+
+The original message content is processed only as needed to generate the hash and is not retained by us.
+
+## How We Use Information
+
+We use message-content hashes solely to operate and provide the Service.
+
+We do not use the hashes for advertising, marketing, user profiling, or analytics, and we do not sell them.
+
+## Data Retention
+
+Message-content hashes are retained for up to 14 days after they are created. After that period, they are automatically deleted.
+
+We do not retain any other data.
+
+## Sharing and Disclosure
+
+We do not sell, rent, or share stored message-content hashes with advertisers, data brokers, or other third parties.
+
+We may disclose information if required to do so by applicable law or in response to a valid legal request. Because hashes are automatically deleted after 14 days, we may no longer possess the requested information when a request is received.
+
+## Data Security
+
+We use reasonable administrative and technical safeguards designed to protect the information we retain. However, no method of electronic storage or transmission is completely secure, and we cannot guarantee absolute security.
+
+## Discord
+
+The Service operates through Discord. Discord may independently collect and process information under its own privacy policy and terms. We do not control Discord's data practices.
+
+## Children's Privacy
+
+The Service is not directed to children under the minimum age required to use Discord in their jurisdiction. We do not knowingly collect personal information from children. If you believe a child has provided information through the Service, contact us using the address below.
+
+## Your Privacy Requests
+
+You may contact us with questions or requests concerning this Privacy Policy or the information we retain. Because we store only message-content hashes and do not store identifiers that connect a hash to a particular person, we may be unable to identify or retrieve a specific user's hash.
+
+## Changes to This Privacy Policy
+
+We may update this Privacy Policy from time to time. Any changes will be posted with a revised "Last updated" date.
+
+## Contact Us
+
+For privacy questions, contact us at:
+
+- Email: kuiper.legal@pm.me
