@@ -3,6 +3,8 @@
 @import '@fontsource/fira-code/latin-500.css';
 @import '@fontsource/fira-code/latin-700.css';
 @import 'katex/dist/katex.min.css';
+@import './styles/prose.css';
+@import './styles/workbench.css';
 
 /*
   docs.osm.sh: a drafting workbench in daylight. Whiteprint paper, one
@@ -111,24 +113,26 @@
 
   /*
     The drawing lies on the table. Outside the rails the table shows
-    through, and a band of section hatching runs down beside each rail,
-    the way a drafter hatches what is cut away. The column itself is
-    paper (see .bench-col), so the hatch only shows in the margins.
+    through, and from 640px a band of section hatching runs down beside
+    each rail, the way a drafter hatches what is cut away. The column
+    itself is paper (see .bench-col), so the hatch only shows in the
+    margins. Below 640px the margins are too narrow for a band, so the
+    table there is left plain.
   */
   body {
-    --col: min(100% - 2rem, 76rem);
     --hatch: 28px;
     margin: 0;
     min-height: 100dvh;
     color: var(--ink);
-    background:
-      repeating-linear-gradient(-45deg, var(--rule) 0 1px, transparent 1px 7px) center top /
-        calc(var(--col) + 2 * var(--hatch)) 100% no-repeat,
-      var(--table);
+    background: var(--table);
   }
   @media (min-width: 640px) {
     body {
       --col: min(100% - 4rem, 76rem);
+      background:
+        repeating-linear-gradient(-45deg, var(--rule) 0 1px, transparent 1px 7px) center top /
+          calc(var(--col) + 2 * var(--hatch)) 100% no-repeat,
+        var(--table);
     }
   }
 
@@ -180,124 +184,50 @@
 }
 
 @layer components {
-  /* Page prose, set on the grid. */
-  .prose-mono {
-    font-size: 0.95rem;
-    line-height: 1.65;
-    color: var(--ink);
-    min-width: 0;
-    max-width: 100%;
-  }
-  .prose-mono > * + * {
-    margin-top: 1em;
-  }
-  .prose-mono p {
-    max-width: 68ch;
-  }
-  .prose-mono strong {
-    font-weight: 700;
-  }
-  .prose-mono em {
-    font-style: italic;
-  }
-  .prose-mono a {
-    color: var(--rose-ink);
-    text-decoration: underline;
-    text-decoration-color: var(--rose);
-  }
-  .prose-mono a:hover {
-    color: var(--ink);
-  }
-  .prose-mono code {
-    background: var(--ground-2);
-    padding: 0 0.3ch;
-  }
-  .prose-mono pre {
-    background: var(--ground-2);
-    padding: 0.75rem 1rem;
-    overflow-x: auto;
-  }
-  .prose-mono ul,
-  .prose-mono ol {
-    padding-left: 3ch;
-  }
-  .prose-mono ul {
-    list-style: '- ';
-  }
-  .prose-mono ol {
-    list-style: decimal;
-  }
-  .prose-mono li + li {
-    margin-top: 0.25em;
-  }
-  .prose-mono blockquote {
-    border-left: 1px solid var(--rule);
-    padding-left: 1.5ch;
-    color: var(--ink-2);
-  }
-  .prose-mono table {
-    border-collapse: collapse;
-    font-variant-numeric: tabular-nums;
-  }
-  .prose-mono th,
-  .prose-mono td {
-    border: 1px solid var(--rule);
-    padding: 0.25em 1ch;
-    text-align: left;
-  }
-  .prose-mono th {
-    font-weight: 500;
-    background: var(--ground-2);
-  }
-  .prose-mono hr {
-    border: 0;
-    border-top: 1px solid var(--rule);
-  }
-  .prose-mono h1,
-  .prose-mono h2,
-  .prose-mono h3 {
-    font-weight: 500;
-    margin-top: 1.5em;
-  }
-
   /*
     The drawing: rows that run the full width, each cut by its top rule,
     and a column inside them bounded by two rails that run the full
     height. Where a rule crosses a rail sits a registration mark, a small
     cross centred on the intersection.
+
+    Below 640px the column is the whole width of the window, so the text
+    gets every pixel: there are no margins, so no rails and no crosses,
+    and the rows' rules alone cut the drawing. Corner marks that reach
+    past the edge are clipped rather than allowed to scroll the page.
   */
   .bench-row {
     position: relative;
     border-top: 1px solid var(--rule);
+    overflow-x: clip;
   }
   .bench-row[data-open] {
     border-top-width: 0;
   }
   .bench-col {
     position: relative;
-    width: calc(100% - 2rem);
+    width: 100%;
     max-width: 76rem;
     margin-inline: auto;
-    border-inline: 1px solid var(--rule);
     background: var(--ground);
   }
   @media (min-width: 640px) {
     .bench-col {
       width: calc(100% - 4rem);
+      border-inline: 1px solid var(--rule);
     }
-  }
-  .bench-row:not([data-open]) > .bench-col::before,
-  .bench-row:not([data-open]) > .bench-col::after {
-    content: '';
-    position: absolute;
-    z-index: 2;
-    top: -6px;
-    width: 11px;
-    height: 11px;
-    pointer-events: none;
-    background:
-      linear-gradient(var(--ink-3), var(--ink-3)) center / 1px 100% no-repeat,
-      linear-gradient(var(--ink-3), var(--ink-3)) center / 100% 1px no-repeat;
+    .bench-row:not([data-open]) > .bench-col::before,
+    .bench-row:not([data-open]) > .bench-col::after {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      top: -6px;
+      width: 11px;
+      height: 11px;
+      pointer-events: none;
+      background:
+        linear-gradient(var(--ink-3), var(--ink-3)) center / 1px 100% no-repeat,
+        linear-gradient(var(--ink-3), var(--ink-3)) center / 100% 1px no-repeat;
+    }
   }
 
   /*
@@ -355,17 +285,24 @@
   */
   .sheets {
     display: grid;
-    margin-right: -1px;
     margin-bottom: -1px;
   }
   .sheet {
     position: relative;
     display: flex;
     flex-direction: column;
-    border-right: 1px solid var(--rule);
     border-bottom: 1px solid var(--rule);
     color: var(--ink);
     transition: background-color 150ms var(--ease-out-expo);
+  }
+  /* With rails, the last column's right edge is pulled onto the rail. */
+  @media (min-width: 640px) {
+    .sheets {
+      margin-right: -1px;
+    }
+    .sheet {
+      border-right: 1px solid var(--rule);
+    }
   }
   .sheet-link {
     color: inherit;
@@ -442,31 +379,5 @@
   .sheet,
   .sheet-marks {
     transition: none;
-  }
-}
-
-/* KaTeX overrides stay unlayered so they win over katex.min.css. */
-.prose-mono .katex {
-  font-size: 1.08em;
-}
-.prose-mono .katex-display {
-  margin: 1.25em 0;
-  overflow-x: auto;
-  overflow-y: hidden;
-  padding: 0.25em 0;
-  max-width: 100%;
-}
-.prose-mono .katex-display > .katex {
-  text-align: left;
-  padding-left: 2ch;
-  width: max-content;
-  max-width: none;
-}
-@media (max-width: 639px) {
-  .prose-mono .katex-display {
-    font-size: 0.9em;
-  }
-  .prose-mono .katex-display > .katex {
-    padding-left: 0;
   }
 }

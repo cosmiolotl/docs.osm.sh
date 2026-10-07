@@ -26,7 +26,13 @@ tags: osm.sh, ssh, deploy
 Body in Markdown, with GitHub tables and `$inline$` / `$$display$$` math.
 ```
 
-All four fields are optional. A filename that starts with `_`, or that sets `draft: true`, is not published. Pages are bundled at build time.
+All fields are optional. An optional `updated: YYYY-MM-DD` overrides the article's latest Git revision date. The index's `last rev` shows the latest revision across published articles, falling back to `date` when Git history is unavailable. A filename that starts with `_`, or that sets `draft: true`, is not published. Pages are bundled at build time.
+
+## Article views
+
+The index shows a shared count of article opens. Opening or reloading an article adds one view; index visits, searches, link prefetches, and missing pages do not. The count is recorded after the article renders in a browser with JavaScript enabled.
+
+The Cloudflare `VIEW_COUNTER` Durable Object persists the total across visitors and deployments. Its binding and SQLite migration are included in `wrangler.jsonc` and provisioned by the normal deploy command. Local development uses separate local storage. An unavailable counter displays `# unavailable` and does not block reading.
 
 ## Find
 

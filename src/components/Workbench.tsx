@@ -5,36 +5,29 @@ import {
   useRef,
   useState,
   type KeyboardEvent as ReactKeyboardEvent,
-  type ReactNode,
 } from 'react'
-import { Link, useNavigate } from '@tanstack/react-router'
-import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp } from 'lucide-react'
-import { entryHref, sheetNo, type Entry } from '@/lib/kinds'
+import { useNavigate } from '@tanstack/react-router'
+import { entryHref, type Entry } from '@/lib/kinds'
 import { SiteHeader } from '@/components/SiteHeader'
-import { Fields, Margin, Row } from '@/components/Bench'
+import { Margin, Row } from '@/components/Bench'
+import { Sheet } from '@/components/Sheet'
+import { TagCompletions } from '@/components/TagCompletions'
+import { Ruler } from '@/components/Ruler'
+import { WorkbenchTitle } from '@/components/WorkbenchTitle'
+import { WorkbenchFooter } from '@/components/WorkbenchFooter'
 import { findPages } from '@/server/content.fn'
 import {
   hasTags,
-  markTag,
-  markWords,
   parseQuery,
   queryWords,
   tagAt,
   tokenize,
   type Hit,
-  type Segment,
 } from '@/lib/search'
 
 function plural(n: number, word: string) {
   return `${n} ${word}${n === 1 ? '' : 's'}`
 }
-
-/** How many completions the tags row lists before it counts the rest. */
-const MAX_COMPLETIONS = 12
-
-/** A tag reads like a link: ink-2, rose-ink and underlined under the pointer. */
-const tagLook =
-  'no-underline underline-offset-[0.2em] decoration-1 hover:underline hover:text-rose-ink transition-colors duration-150 cursor-pointer'
 
 /**
   Before the server answers the first search, sheets are narrowed by what
@@ -49,22 +42,6 @@ function provisional(entries: Entry[], words: string[], tags: string[]) {
     const have = tokenize(`${e.title} ${e.summary ?? ''} ${e.slug} ${e.tags.join(' ')}`).map((t) => t.term)
     return words.every((w) => have.some((t) => t.startsWith(w)))
   })
-}
-
-function Redlined({ segments }: { segments: Segment[] }) {
-  return (
-    <>
-      {segments.map((s, i) =>
-        s.hit ? (
-          <mark key={i} className="redline">
-            {s.text}
-          </mark>
-        ) : (
-          s.text
-        ),
-      )}
-    </>
-  )
 }
 
 type Shown = { entry: Entry; hit?: Hit }
@@ -178,7 +155,6 @@ export function Workbench({ entries, q = '', at }: { entries: Entry[]; q?: strin
       return entry ? [{ entry, hit }] : []
     })
   }, [entries, active, words, tags, results, byKey])
-  const latest = entries.find((e) => e.date)?.date
 
   // The query rides in the URL, so a search can be linked and survives back.
   useEffect(() => {
@@ -294,25 +270,11 @@ export function Workbench({ entries, q = '', at }: { entries: Entry[]; q?: strin
   }
 
   return (
-    <div className="flex flex-col min-h-dvh">
+    <div className="workbench flex flex-col min-h-dvh">
       <SiteHeader />
 
       <main className="flex-1 flex flex-col">
-        <Row open label="Title block" className="grid grid-cols-1 sm:grid-cols-[1fr_30ch]">
-          <div className="title-cell px-[3ch] pt-12 pb-10 lg:py-16">
-            <h1 className="text-[clamp(2.25rem,5vw,3.5rem)] font-medium leading-[1.05] tracking-[-0.03em]">
-              docs.osm.sh
-            </h1>
-            <p className="mt-3 text-ink-2">osmii's knowledgebase</p>
-          </div>
-          <Fields
-            fields={[
-              { label: 'drawn', value: 'osmii' },
-              { label: 'sheets', value: String(total) },
-              { label: 'last rev', value: latest ?? '# none', muted: !latest },
-            ]}
-          />
-        </Row>
+        <WorkbenchTitle entries={entries} />
 
         <Row label="Find">
           <div className="group relative flex flex-wrap sm:flex-nowrap items-center gap-x-[2ch] gap-y-3 px-[3ch] py-6 sm:py-0 sm:min-h-[7.5rem] focus-within:bg-[color-mix(in_srgb,var(--rose-wash)_20%,var(--ground))] transition-colors duration-150">
@@ -373,20 +335,20 @@ export function Workbench({ entries, q = '', at }: { entries: Entry[]; q?: strin
           <TagCompletions
             prefix={completing.prefix}
             completions={completions}
-            any={tagSet.length > 0}
+            hasTags={tagSet.length > 0}
             onPick={complete}
           />
         )}
 
-        <Row>
-          <Ruler />
-        </Row>
+        <div className="hidden sm:block">
+          <Row><Ruler /></Row>
+        </div>
 
         <Row grow label="Sheets">
           {total === 0 ? (
-            <Note># nothing published yet</Note>
+            <p className="px-[3ch] py-6 text-sm text-ink-3"># nothing published yet</p>
           ) : shown.length === 0 ? (
-            <Note>
+            <p className="px-[3ch] py-6 text-sm text-ink-3">
               # no sheet matches “{query.trim()}” ·{' '}
               <button
                 type="button"
@@ -396,7 +358,7 @@ export function Workbench({ entries, q = '', at }: { entries: Entry[]; q?: strin
                 clear
               </button>{' '}
               to show all {total}
-            </Note>
+            </p>
           ) : (
             <ul
               id="sheets"
@@ -418,184 +380,10 @@ export function Workbench({ entries, q = '', at }: { entries: Entry[]; q?: strin
           )}
         </Row>
 
-        {/* The footer only holds the key hints, so it is drawn only where they show. */}
-        {total > 0 && (
-          <div className="hidden sm:block">
-            <Row className="flex items-center justify-end gap-[2.5ch] px-[3ch] py-4 text-sm text-ink-3">
-              <Hint k="/" label="find" />
-              <Hint k="#" label="tag" />
-              <Hint
-                k={
-                  <span className="flex items-center gap-[0.5ch]">
-                    <span className="sr-only">arrow keys</span>
-                    {[ArrowUp, ArrowDown, ArrowLeft, ArrowRight].map((Icon, i) => (
-                      <Icon key={i} aria-hidden="true" className="size-3.5" strokeWidth={2} />
-                    ))}
-                  </span>
-                }
-                label="move"
-              />
-              <Hint k="enter" label="open" />
-            </Row>
-          </div>
-        )}
+        {total > 0 && <WorkbenchFooter />}
       </main>
-      <Margin ruled className="h-10" />
-    </div>
-  )
-}
-
-function Hint({ k, label }: { k: ReactNode; label: string }) {
-  return (
-    <span className="flex items-center gap-[1ch]">
-      <kbd className="font-medium text-ink-2">{k}</kbd>
-      <span>{label}</span>
-    </span>
-  )
-}
-
-/*
-  A sheet is one cell, opened by its link: the link's box is stretched over
-  the whole cell, so a click anywhere opens the page, and its tags sit
-  above it as buttons that put the tag in find.
-*/
-function Sheet({
-  entry,
-  hit,
-  words,
-  tags,
-  onTag,
-}: {
-  entry: Entry
-  hit?: Hit
-  words: string[]
-  tags: string[]
-  onTag: (tag: string) => void
-}) {
-  // Matched only in its text: show the passage that matched instead of the summary.
-  const passage = hit?.snippet && !hit.fields.includes('title') && !hit.fields.includes('summary') ? hit.snippet : null
-  return (
-    <li className="sheet group px-[3ch] pt-6 pb-5 min-h-[12rem]">
-      <span aria-hidden="true" className="sheet-marks" />
-      <Link to={entryHref(entry)} data-at={`${entry.kind}/${entry.slug}`} className="sheet-link">
-        <span className="block font-medium leading-snug transition-colors duration-150 group-hover:text-rose-ink">
-          <Redlined segments={markWords(entry.title, words)} />
-        </span>
-        <span
-          className={`mt-2 block text-sm leading-relaxed line-clamp-3 ${entry.summary ? 'text-ink-2' : 'text-ink-3'}`}
-        >
-          {passage ? (
-            <>
-              {passage.before && '… '}
-              <Redlined segments={passage.segments} />
-              {passage.after && ' …'}
-            </>
-          ) : entry.summary ? (
-            <Redlined segments={markWords(entry.summary, words)} />
-          ) : (
-            '# no summary'
-          )}
-        </span>
-      </Link>
-      <div className="mt-auto pt-6 flex flex-col gap-2 text-sm">
-        {entry.tags.length > 0 && (
-          <ul aria-label="tags" className="flex flex-wrap gap-x-[1.5ch] gap-y-1">
-            {entry.tags.map((tag) => (
-              <li key={tag}>
-                <button type="button" onClick={() => onTag(tag)} className={`relative z-[2] text-ink-2 ${tagLook}`}>
-                  <span className="sr-only">find tag </span>
-                  <Redlined segments={markTag(tag, tags, words)} />
-                </button>
-              </li>
-            ))}
-          </ul>
-        )}
-        <span className="flex items-baseline justify-between gap-[2ch] tabular-nums">
-          <span className="text-ink">
-            <span className="sr-only">sheet </span>
-            {sheetNo(entry.no)}
-          </span>
-          <span className="text-ink-2">{entry.date ?? '# undated'}</span>
-        </span>
-      </div>
-    </li>
-  )
-}
-
-/*
-  The tags row: drawn under find only while a #tag is being typed. It
-  lists the set's tags that begin it, most used first, each with how many
-  sheets carry it; the first is the one tab takes.
-*/
-function TagCompletions({
-  prefix,
-  completions,
-  any,
-  onPick,
-}: {
-  prefix: string
-  completions: { tag: string; count: number }[]
-  any: boolean
-  onPick: (tag: string) => void
-}) {
-  const listed = completions.slice(0, MAX_COMPLETIONS)
-  const more = completions.length - listed.length
-  // Insets are measured at the find row's 16px, so `tags` sits under `find`
-  // and the completions start where the query does.
-  return (
-    <Row label="Tag completions" className="flex flex-wrap items-baseline gap-x-[2ch] gap-y-2 px-[3ch] py-3">
-      <span className="text-sm text-ink-2 shrink-0">tags</span>
-      {listed.length === 0 ? (
-        <span className="text-sm text-ink-3">{any ? `# no tag begins “${prefix}”` : '# no tags yet'}</span>
-      ) : (
-        <>
-          <ul className="flex flex-wrap gap-x-[2ch] gap-y-1 min-w-0 text-sm">
-            {listed.map(({ tag, count }, i) => (
-              <li key={tag}>
-                <button
-                  type="button"
-                  // Keep the caret in find: the click must not blur it first.
-                  onMouseDown={(e) => e.preventDefault()}
-                  onClick={() => onPick(tag)}
-                  className={`${i === 0 ? 'text-ink font-medium' : 'text-ink-2'} ${tagLook}`}
-                >
-                  <Redlined segments={markTag(tag, prefix ? [prefix] : [], [])} />
-                  <span className="ml-[0.75ch] font-normal text-ink-3 tabular-nums">
-                    <span className="sr-only">, sheets: </span>
-                    {count}
-                  </span>
-                </button>
-              </li>
-            ))}
-            {more > 0 && <li className="text-ink-3"># {more} more</li>}
-          </ul>
-          <span className="hidden sm:flex ml-auto items-center gap-[1ch] text-sm text-ink-3">
-            <kbd className="font-medium text-ink-2">tab</kbd>
-            <span>complete</span>
-          </span>
-          <span className="sr-only" aria-live="polite">
-            {`tab completes #${listed[0].tag}`}
-          </span>
-        </>
-      )}
-    </Row>
-  )
-}
-
-function Note({ children }: { children: ReactNode }) {
-  return <p className="px-[3ch] py-6 text-sm text-ink-3">{children}</p>
-}
-
-/* The ruler: a tick per 16px square, a longer one every fifth, numbered. */
-function Ruler() {
-  return (
-    <div aria-hidden="true" className="ruler relative overflow-hidden select-none">
-      <div className="absolute inset-0 flex">
-        {Array.from({ length: 48 }, (_, i) => (
-          <span key={i} className="shrink-0 w-[80px] pl-1 pt-0.5 text-xs leading-none text-ink-3 tabular-nums">
-            {i * 5}
-          </span>
-        ))}
+      <div className="hidden sm:block">
+        <Margin ruled className="h-10" />
       </div>
     </div>
   )

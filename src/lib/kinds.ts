@@ -18,6 +18,8 @@ export interface Entry {
   summary?: string
   /** `YYYY-MM-DD`, when the file gives one. */
   date?: string
+  /** Latest article revision, from frontmatter or Git history. */
+  updated?: string
   /** Folded and in the file's order: `blood-on-the-clocktower`. Empty when it gives none. */
   tags: string[]
   /** Sheet number in the set: 1 is the oldest page, the newest is the highest. */

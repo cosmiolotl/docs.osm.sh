@@ -5,6 +5,7 @@ import { sheetNo } from '@/lib/kinds'
 import { SiteHeader } from '@/components/SiteHeader'
 import { Fields, Margin, Row } from '@/components/Bench'
 import { Markdown } from '@/components/Markdown'
+import { usePageRead } from '@/hooks/usePageRead'
 
 export const Route = createFileRoute('/$kind/$')({
   loader: ({ params }) => loadPage({ data: { kind: params.kind, slug: params._splat ?? '' } }),
@@ -27,6 +28,7 @@ function PageView() {
   const page = Route.useLoaderData()
   const navigate = useNavigate()
   const at = `${page.kind}/${page.slug}`
+  usePageRead(`/${at}`)
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {

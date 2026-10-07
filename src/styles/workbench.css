@@ -1,0 +1,23 @@
+@media (max-width: 639px) {
+  .workbench {
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  .workbench > header,
+  .workbench main > .bench-row {
+    flex-shrink: 0;
+  }
+
+  .workbench main {
+    min-height: 0;
+  }
+
+  .workbench main > .bench-row[aria-label='Sheets'] {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    background: var(--ground);
+  }
+}

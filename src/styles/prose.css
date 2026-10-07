@@ -1,0 +1,107 @@
+@layer components {
+  /* Page prose, set on the grid. */
+  .prose-mono {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--ink);
+    min-width: 0;
+    max-width: 100%;
+  }
+  .prose-mono > * + * {
+    margin-top: 1em;
+  }
+  .prose-mono p {
+    max-width: 68ch;
+  }
+  .prose-mono strong {
+    font-weight: 700;
+  }
+  .prose-mono em {
+    font-style: italic;
+  }
+  .prose-mono a {
+    color: var(--rose-ink);
+    text-decoration: underline;
+    text-decoration-color: var(--rose);
+  }
+  .prose-mono a:hover {
+    color: var(--ink);
+  }
+  .prose-mono code {
+    background: var(--ground-2);
+    padding: 0 0.3ch;
+  }
+  .prose-mono pre {
+    background: var(--ground-2);
+    padding: 0.75rem 1rem;
+    overflow-x: auto;
+  }
+  .prose-mono ul,
+  .prose-mono ol {
+    padding-left: 3ch;
+  }
+  .prose-mono ul {
+    list-style: '- ';
+  }
+  .prose-mono ol {
+    list-style: decimal;
+  }
+  .prose-mono li + li {
+    margin-top: 0.25em;
+  }
+  .prose-mono blockquote {
+    border-left: 1px solid var(--rule);
+    padding-left: 1.5ch;
+    color: var(--ink-2);
+  }
+  .prose-mono table {
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+  }
+  .prose-mono th,
+  .prose-mono td {
+    border: 1px solid var(--rule);
+    padding: 0.25em 1ch;
+    text-align: left;
+  }
+  .prose-mono th {
+    font-weight: 500;
+    background: var(--ground-2);
+  }
+  .prose-mono hr {
+    border: 0;
+    border-top: 1px solid var(--rule);
+  }
+  .prose-mono h1,
+  .prose-mono h2,
+  .prose-mono h3 {
+    font-weight: 500;
+    margin-top: 1.5em;
+  }
+}
+
+/* KaTeX overrides stay unlayered so they win over katex.min.css. */
+.prose-mono .katex {
+  font-size: 1.08em;
+}
+.prose-mono .katex-display {
+  margin: 1.25em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.25em 0;
+  max-width: 100%;
+}
+.prose-mono .katex-display > .katex {
+  text-align: left;
+  padding-left: 2ch;
+  width: max-content;
+  max-width: none;
+}
+@media (max-width: 639px) {
+  .prose-mono .katex-display {
+    font-size: 0.9em;
+  }
+  .prose-mono .katex-display > .katex {
+    padding-left: 0;
+  }
+}

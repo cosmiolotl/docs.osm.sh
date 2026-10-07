@@ -59,6 +59,7 @@ function load(): Page[] {
       title: meta.title || titleFromSlug(slug),
       summary: meta.summary || undefined,
       date: DATE.test(meta.date ?? '') ? meta.date : undefined,
+      updated: DATE.test(meta.updated ?? '') ? meta.updated : import.meta.env.CONTENT_REVISIONS[path],
       tags: parseTags(meta.tags),
       body,
     })
