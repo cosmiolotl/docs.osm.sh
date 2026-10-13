@@ -1,0 +1,295 @@
+@import 'tailwindcss';
+@import 'fumadocs-ui/css/neutral.css';
+@import 'fumadocs-ui/css/preset.css';
+@import '@fontsource/fira-sans/latin-400.css';
+@import '@fontsource/fira-sans/latin-400-italic.css';
+@import '@fontsource/fira-sans/latin-500.css';
+@import '@fontsource/fira-sans/latin-600.css';
+@import '@fontsource/fira-sans/latin-600-italic.css';
+@import '@fontsource/fira-code/latin-400.css';
+@import '@fontsource/fira-code/latin-500.css';
+@import '@fontsource/fira-code/latin-600.css';
+@import 'katex/dist/katex.min.css';
+
+/*
+  docs.osm.sh, dithercore. A navy night band carries the title over a
+  rose plasma, dissolves through a dithered seam into whiteprint paper,
+  and the paper dissolves back into night at the foot. Navy ink, rose
+  redlines, square corners. Fira Sans reads; Fira Code is kept for code,
+  data, and the address. Light only.
+*/
+@theme {
+  --color-fd-background: #f4f2ec;
+  --color-fd-foreground: #121b35;
+  --color-fd-muted: #ebe8df;
+  --color-fd-muted-foreground: #4a5170;
+  --color-fd-popover: #f4f2ec;
+  --color-fd-popover-foreground: #121b35;
+  --color-fd-card: #f4f2ec;
+  --color-fd-card-foreground: #121b35;
+  --color-fd-border: #b3afa2b3;
+  --color-fd-primary: #9a4d62;
+  --color-fd-primary-foreground: #f4f2ec;
+  --color-fd-secondary: #ebe8df;
+  --color-fd-secondary-foreground: #121b35;
+  --color-fd-accent: #f0d9df;
+  --color-fd-accent-foreground: #121b35;
+  --color-fd-ring: #c67b8b;
+  --color-fd-overlay: color-mix(in srgb, #121b35 40%, transparent);
+
+  --color-ink: #121b35;
+  --color-paper: #f4f2ec;
+  --color-rule: #c9c6ba;
+  --color-rose: #c67b8b;
+  --color-rose-ink: #9a4d62;
+  --color-rose-wash: #f0d9df;
+  --color-writing: #78384f;
+  --color-writing-light: #c67b8b;
+  --color-projects: #365573;
+  --color-projects-light: #779bc6;
+  --color-projects-wash: #d1e1f2;
+  --color-notes: #766038;
+  --color-notes-light: #c5a064;
+
+  --font-sans: 'Fira Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Drawn, not moulded: every corner is square. */
+  --radius-xs: 0;
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --radius-2xl: 0;
+  --radius-3xl: 0;
+}
+
+/*
+  Tailwind only applies `hover:` when the primary pointer can hover, which
+  touchscreen laptops often report it can't, even with a touchpad in use.
+  Hover whenever the element is actually hovered.
+*/
+@custom-variant hover (&:hover);
+
+@utility pixelated {
+  image-rendering: pixelated;
+}
+
+/*
+  The seams. Night and its art are one layer that runs on through the
+  last (or first) 96px and is cut away there by a dithered mask, so the
+  plasma dissolves into the paper with the navy instead of stopping at a
+  painted strip. The masks are baked at 4px a cell (scripts/seam-art.py).
+*/
+@utility seam-down {
+  mask:
+    linear-gradient(#000 0 0) top / 100% calc(100% - 96px) no-repeat,
+    url(/dither/seam-down.png) bottom / 1440px 96px repeat-x;
+}
+@utility seam-up {
+  mask:
+    linear-gradient(#000 0 0) bottom / 100% calc(100% - 96px) no-repeat,
+    url(/dither/seam-up.png) top / 1440px 96px repeat-x;
+}
+
+/* Small mono caps over a group: ON THIS PAGE, WRITING, IN SHORT. */
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+html {
+  scrollbar-gutter: stable;
+  color-scheme: light;
+  background: var(--color-ink);
+}
+
+html > body[data-scroll-locked] {
+  margin-right: 0px !important;
+  --removed-body-scroll-bar-size: 0px !important;
+}
+
+body {
+  font-kerning: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Code reads glyph by glyph: no `=>` or `!=` ligatures. */
+code,
+kbd,
+pre,
+samp,
+.font-mono {
+  font-variant-ligatures: none;
+}
+
+::selection {
+  background: var(--color-rose-wash);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-rose);
+  outline-offset: 3px;
+}
+
+/*
+  The article column. Blocks sit 24px apart; headings carry a rose
+  mono `#` and an extra 24px above. Body copy is 17/28 in true black
+  for the longest reading; tables and lists keep to the same measure.
+*/
+.article {
+  color: #000;
+  font-size: 17px;
+  line-height: 28px;
+}
+.article > * + * {
+  margin-top: 24px;
+}
+.article p {
+  text-wrap: pretty;
+}
+.article :is(h1, h2, h3, h4) {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  font-weight: 600;
+  text-wrap: balance;
+  scroll-margin-top: 24px;
+}
+.article > :is(h1, h2, h3, h4) {
+  margin-top: 48px;
+}
+.article > :is(h1, h2, h3, h4):first-child {
+  margin-top: 0;
+}
+.article :is(h1, h2) {
+  font-size: 28px;
+  line-height: 34px;
+  letter-spacing: -0.015em;
+}
+.article h3 {
+  font-size: 22px;
+  line-height: 28px;
+  letter-spacing: -0.01em;
+}
+.article h4 {
+  font-size: 18px;
+  line-height: 26px;
+}
+.article :is(h1, h2, h3, h4) + * {
+  margin-top: 16px;
+}
+.article strong {
+  font-weight: 600;
+}
+.article a:not(.not-article) {
+  color: var(--color-fd-primary);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.article a:not(.not-article):hover {
+  text-decoration-thickness: 2px;
+}
+.article :not(pre) > code {
+  padding: 1px 5px;
+  background: var(--color-fd-muted);
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+
+/* Lists: a small rose square for bullets, mono numerals for steps. */
+.article ul,
+.article ol {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.article ul > li {
+  position: relative;
+  padding-left: 20px;
+}
+.article ul > li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 6px;
+  height: 6px;
+  background: var(--color-fd-ring);
+}
+.article ol {
+  counter-reset: step;
+}
+.article ol > li {
+  position: relative;
+  padding-left: 32px;
+  counter-increment: step;
+}
+.article ol > li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  color: var(--color-fd-primary);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+.article li > :is(ul, ol) {
+  margin-top: 10px;
+}
+
+.article blockquote {
+  padding-left: 20px;
+  border-left: 2px solid var(--color-fd-ring);
+  color: var(--color-fd-muted-foreground);
+}
+
+.article hr {
+  border: 0;
+  border-top: 1px solid var(--color-fd-border);
+}
+
+.article img {
+  max-width: 100%;
+}
+
+/* Tables: ruled, a muted head, figures in mono and set flush right. */
+.article table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  line-height: 20px;
+}
+.article th {
+  padding: 10px 16px;
+  background: var(--color-fd-muted);
+  font-weight: 600;
+  text-align: left;
+}
+.article td {
+  padding: 9px 16px;
+  font-family: var(--font-mono);
+}
+.article :is(th, td) {
+  border-bottom: 1px solid var(--color-fd-border);
+  vertical-align: top;
+}
+.article :is(th, td):not(:first-child) {
+  text-align: right;
+}
+.article tr:last-child > td {
+  border-bottom: 0;
+}
+
+.article .katex {
+  font-size: 1.05em;
+}
+.article .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "docs-osm-sh",
+  "account_id": "d55246711aed4046bec8c121bf30c527",
+  "routes": [{ "pattern": "docs.osm.sh", "custom_domain": true }],
+  "compatibility_date": "2026-09-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": "src/server.ts",
+  "durable_objects": {
+    "bindings": [{ "name": "VIEW_COUNTER", "class_name": "ViewCounter" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["ViewCounter"] }]
+}

@@ -1,0 +1,23 @@
+---
+title: Ordered dithering with a 4×4 Bayer matrix
+description: How the pixel art on this site picks an ink without any randomness.
+date: 2026-10-13
+tags: [dithering, canvas, pixel-art]
+draft: true
+---
+
+Every image here is drawn with four inks and a 4×4 Bayer matrix. There's no noise, so the pattern holds still while the picture underneath it moves.
+
+For each pixel, map its brightness onto the palette, then compare the leftover fraction against the matrix cell at (x mod 4, y mod 4). Above the threshold, step up one ink; below it, stay.
+
+```ts title="src/lib/dither.ts"
+const bayer = [0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5]
+const threshold = (bayer[(y % 4) * 4 + (x % 4)] + 0.5) / 16
+const level = Math.floor(tone + threshold) // 0 = ink … 3 = wash
+```
+
+Because the lattice is fixed, the hover wave only shifts the sampled image. The dots stay put and the subject drifts through them.
+
+- Four inks per palette: ink, dark, mid, and wash.
+- Where the source alpha falls below the threshold, the pixel falls back to paper.
+- Reduced motion skips the wave and keeps the resting frame.
