@@ -32,5 +32,6 @@ featured: true
 Body text, written in MDX
 
 ```ts title="file.ts"
-console.log("Hello world!)
+console.log('Hello world!')
 ```
+````
