@@ -12,9 +12,7 @@ import { useSearchContext } from 'fumadocs-ui/contexts/search'
 export function Mark({ className = '' }: { className?: string }) {
   return (
     <span className={`inline-flex items-center gap-2.5 font-mono text-[15px] leading-[18px] font-medium ${className}`}>
-      <span aria-hidden="true" className="text-fd-ring">
-        /
-      </span>
+      <img src="/favicon.svg" alt="" width={24} height={24} className="size-6 shrink-0" />
       <span className="text-paper">docs.osm.sh</span>
     </span>
   )
